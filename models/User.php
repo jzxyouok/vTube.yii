@@ -35,8 +35,8 @@ use yii\web\IdentityInterface;
     {
         return [
             [['username', 'password', 'authkey', 'accessToken'], 'required'],
-            [['username'], 'email', 'max' => 50],
-            [['password', 'authkey', 'accessToken'], 'string', 'max' => 100],
+            [['username'], 'email'],
+            [['password', 'authkey', 'accessToken'], 'string'],
         ];
     }
 

@@ -4,19 +4,19 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\VideoSearch */
+/* @var $searchModel app\models\UserSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Videos';
+$this->title = 'Users';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="video-index">
+<div class="user-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Video', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create User', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -24,12 +24,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'video_id',
-            'video_title',
-            'video_description',
-            'video_url:url',
-            'video_added_user_id',
-            // 'category_id',
+            'id',
+            'username',
+            'password',
+            'authkey',
+            'accessToken',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

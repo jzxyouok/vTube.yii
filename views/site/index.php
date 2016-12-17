@@ -1,5 +1,8 @@
 <?php
 
+use yii\helpers\Html;
+use yii\grid\GridView;
+
 /* @var $this yii\web\View */
 
 $this->title = 'vTube.yii';
@@ -25,50 +28,25 @@ $this->title = 'vTube.yii';
 
 
   <div class="col-sm-12">
-    <div id="main" class="col-sm-9">
-      <div class="row">
-        <div class="col-sm-offset-1 col-sm-10">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ePbKGoIGAXY"></iframe>
-          </div>
+    <?php foreach ($videos as $video) { ?>
+      <div class="col-sm-4 col-md-3">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="<?= $video->video_url; ?>"></iframe>
         </div>
-      </div>
-      <br>
-    </div>
-    <div class="col-xs-6 col-sm-3">
-      <div class="row">
         <div class="col-sm-10">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ePbKGoIGAXY"></iframe>
+          <div class="row">
+            <strong><?= $video->video_title; ?></strong>
           </div>
         </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-sm-10">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ePbKGoIGAXY"></iframe>
+        <div class="col-sm-2">
+          <div class="row">
+            <button class="btn btn-defult" type="button" name="button"><></button>
           </div>
         </div>
+        <br /><br /><br />
       </div>
-      <br>
-      <div class="row">
-        <div class="col-sm-10">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ePbKGoIGAXY"></iframe>
-          </div>
-        </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-sm-10">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ePbKGoIGAXY"></iframe>
-          </div>
-        </div>
-      </div>
+    <?php } ?>
 
-    </div>
   </div>
 
 </div>

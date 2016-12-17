@@ -8,9 +8,15 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Video;
+use app\models\VideoSearch;
+
 
 class SiteController extends Controller
 {
+  public $dataProvider;
+  public $searchModel;
+
   /**
    * @inheritdoc
    */
@@ -60,7 +66,11 @@ class SiteController extends Controller
    */
   public function actionIndex()
   {
-      return $this->render('index');
+    $videos = new Video();
+
+    $result = $videos::find()->all();
+
+    return $this->render('index', ['videos'=> $result]);
   }
 
   /**
