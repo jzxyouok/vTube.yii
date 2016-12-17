@@ -2,16 +2,17 @@ vTube.yii Project
 =================
 
 vTube.yii is created for students, who want to organize and share tutorial videos with other students.
+this web site build using [yiiFramework](http://www.yiiframework.com)
 
 How To Install
 ==============
 1. Clone or download this repository from git hub.
 2. Now You Have to install vendors using [Composer](http://getcomposer.org/), you can install it using this instructions at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix). If you have already install composer
 
-  type this:-
-              ~~~
-              composer install
-              ~~~
+type this:-
+~~~
+composer install
+~~~
 
 How to Run This web Site
 ========================
