@@ -1,3 +1,30 @@
+vTube.yii Project
+=================
+
+vTube.yii is created for students, who want to organize and share tutorial videos with other students.
+
+How To Install
+==============
+1. Clone or download this repository from git hub.
+2. Now You Have to install vendors using [Composer](http://getcomposer.org/), you can install it using this instructions at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix). If you have already install composer
+
+  type this:-
+              ~~~
+              composer install
+              ~~~
+
+How to Run This web Site
+========================
+1. If you are using WAMP, XAMMP or any other apache server.
+
+   Instruction from yiiframework [Recommended Apache Configuration](http://www.yiiframework.com/doc-2.0/guide-start-installation.html#configuring-web-servers)
+
+
+2. You Can Use [built-in PHP web server](https://secure.php.net/manual/en/features.commandline.webserver.php)
+
+   Instruction from yiiframework [Verifying the Installation](http://www.yiiframework.com/doc-2.0/guide-start-installation.html#verifying-installation)
+
+
 Yii 2 Basic Project Template
 ============================
 
@@ -117,11 +144,11 @@ Tests can be executed by running
 
 ```
 composer exec codecept run
-``` 
+```
 
 The command above will execute unit and functional tests. Unit tests are testing the system components, while functional
 tests are for testing user interaction. Acceptance tests are disabled by default as they require additional setup since
-they perform testing in real browser. 
+they perform testing in real browser.
 
 
 ### Running  acceptance tests
@@ -133,7 +160,7 @@ To execute acceptance tests do the following:
 2. Replace `codeception/base` package in `composer.json` with `codeception/codeception` to install full featured
    version of Codeception
 
-3. Update dependencies with Composer 
+3. Update dependencies with Composer
 
     ```
     composer update  
@@ -143,7 +170,7 @@ To execute acceptance tests do the following:
 
     ```
     java -jar ~/selenium-server-standalone-x.xx.x.jar
-    ``` 
+    ```
 
 5. (Optional) Create `yii2_basic_tests` database and update it by applying migrations if you have them.
 
