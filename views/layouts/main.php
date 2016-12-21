@@ -30,7 +30,7 @@ AppAsset::register($this);
         'brandLabel' => 'vTube.yii',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-default navbar-fixed-top',
+            'class' => 'navbar-default',
         ],
     ]);
     echo Nav::widget([
