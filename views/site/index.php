@@ -15,7 +15,7 @@ $this->title = 'vTube.yii';
     <div class="col-sm-12 row">
       <span class="sidenav-btn" onclick="ocNav()">&#9776;</span>
     </div>   
-
+    <br />
     <ul>
       <?php foreach ($categories as $category) { ?>
         <li><a href="#"><?= $category->cat_name; ?></a></li>

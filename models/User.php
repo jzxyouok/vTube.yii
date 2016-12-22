@@ -34,9 +34,9 @@ use yii\web\IdentityInterface;
     public function rules()
     {
         return [
-            [['username', 'password', 'authkey', 'accessToken'], 'required'],
+            [['username', 'password',], 'required'],
             [['username'], 'email'],
-            [['password', 'authkey', 'accessToken'], 'string'],
+            [['password', 'authkey'], 'string'],
         ];
     }
 

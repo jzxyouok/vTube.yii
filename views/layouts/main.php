@@ -43,7 +43,9 @@ AppAsset::register($this);
     $menuItems[] = ['label' => 'Register', 'url' => ['/user/create']];
 
     } else {
+        $menuItems[] = ['label' => 'Category', 'url' => ['/category/index']];
         $menuItems[] = ['label' => 'My Video', 'url' => ['/video/index']];
+        $menuItems[] = ['label' => 'Comments', 'url' => ['/comments/index']];
         $menuItems[] = '<li>'
                     . Html::beginForm(['/site/logout'], 'post')
                     . Html::submitButton(
