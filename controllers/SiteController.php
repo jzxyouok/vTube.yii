@@ -10,6 +10,8 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Video;
 use app\models\VideoSearch;
+use app\models\Category;
+use app\models\CategorySearch;
 
 
 class SiteController extends Controller
@@ -67,10 +69,12 @@ class SiteController extends Controller
   public function actionIndex()
   {
     $videos = new Video();
+    $categories = new Category();
 
-    $result = $videos::find()->all();
+    $videoResult = $videos::find()->all();
+    $categoryResult = $categories::find()->all();
 
-    return $this->render('index', ['videos'=> $result]);
+    return $this->render('index', ['videos' => $videoResult, 'categories' => $categoryResult,]);
   }
 
   /**

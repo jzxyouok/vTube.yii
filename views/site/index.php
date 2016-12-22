@@ -14,15 +14,12 @@ $this->title = 'vTube.yii';
   <div id="mySidenav" class="col-sm-2 sidenav">
     <div class="col-sm-12 row">
       <span class="sidenav-btn" onclick="ocNav()">&#9776;</span>
-    </div>
+    </div>   
+
     <ul>
-      <li><a href="#">Test</a></li>
-      <li><a href="#">Test</a></li>
-      <li><a href="#">Test</a></li>
-      <li><a href="#">Test</a></li>
-      <li><a href="#">Test</a></li>
-      <li><a href="#">Test</a></li>
-      <li><a href="#">Test</a></li>
+      <?php foreach ($categories as $category) { ?>
+        <li><a href="#"><?= $category->cat_name; ?></a></li>
+      <?php } ?>
     </ul>
   </div>
 
@@ -40,7 +37,7 @@ $this->title = 'vTube.yii';
         </div>
         <div class="col-sm-2">
           <div class="row">
-            <button class="btn btn-defult" type="button" name="button"><></button>
+            <button class="btn btn-defult" type="button" name="button"></></button>
           </div>
         </div>
         <br /><br /><br />
