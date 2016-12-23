@@ -137,4 +137,15 @@ class SiteController extends Controller
       return $this->render('about');
   }
 
+  public function actionFindvideo($id) 
+  {
+    $videos = new Video();
+    $categories = new Category();
+
+    $videoResult = $videos::find()->where(['category_id' => $id])->All();
+    $categoryResult = $categories::find()->all();
+
+    return $this->render('index', ['videos' => $videoResult, 'categories' => $categoryResult,]);
+  }
+
 }

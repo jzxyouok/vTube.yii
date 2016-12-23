@@ -8,8 +8,8 @@ body {
 }
 
 .sidenav {
-    height: 100%;
-    width: 20px;
+    height: 83%;
+    /*width: 20px;*/
     position: fixed;
     z-index: 1;
     top: 0;
@@ -19,6 +19,7 @@ body {
     transition: 0.5s;
     padding: 0;
     margin-top: 51px;
+    border: 1px solid #000;
 }
 
 .sidenav-btn {
@@ -51,8 +52,26 @@ body {
     margin-left: 50px;
 }
 
+.video-container {
+    margin-left: 16%;
+}
+
 #main {
     transition: margin-left .5s;
+}
+
+@media screen and (max-width: 767px) {
+    .sidenav {
+        position: relative;
+        margin-bottom: 20px;
+        margin-top: 0;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .video-container {
+        margin-left: 0;
+    }
 }
 
 @media screen and (max-height: 450px) {

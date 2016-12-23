@@ -8,27 +8,22 @@ use yii\grid\GridView;
 $this->title = 'vTube.yii';
 ?>
 
+<div class="header-clear-fix"></div>
 
 <div class="row">
-  <div id="" class="col-sm-2 sidenav">
+  <div id="sidenav" class="col-sm-2 sidenav">
     <!-- <div class="col-sm-12 row">
       <span class="sidenav-btn" onclick="ocNav()">&#9776;</span>
     </div> -->   
     <br />
     <ul>
       <?php foreach ($categories as $category) { ?>
-
-        <li>
-          <?=
-            Html::a($category->cat_name, ['site/findvideo', 'id' => $category->cat_id], ['class' => 'profile-link']);
-          ?>
-        </li>
-
+        <li><a href="#"><?= $category->cat_name; ?></a></li>
       <?php } ?>
     </ul>
   </div>
 
-  <div class="col-sm-10 video-container">
+  <div class="col-sm-10 video-continer">
     <?php foreach ($videos as $video) { ?>
       <div class="col-sm-4 col-md-3">
         <div class="embed-responsive embed-responsive-16by9">
