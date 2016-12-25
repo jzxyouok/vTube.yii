@@ -20,7 +20,7 @@ $this->title = 'vTube.yii';
 
         <li>
           <?=
-            Html::a($category->cat_name, ['site/findvideo', 'id' => $category->cat_id], ['class' => 'profile-link']);
+            Html::a($category->cat_name, ['site/findvideo', 'id' => $category->cat_id], ['class' => 'category-link']);
           ?>
         </li>
 
@@ -34,14 +34,14 @@ $this->title = 'vTube.yii';
         <div class="embed-responsive embed-responsive-16by9">
           <iframe class="embed-responsive-item" src="<?= $video->video_url; ?>"></iframe>
         </div>
-        <div class="col-sm-10">
+        <div class="col-sm-9">
           <div class="row">
             <strong><?= $video->video_title; ?></strong>
           </div>
         </div>
         <div class="col-sm-2">
           <div class="row">
-            <button class="btn btn-defult" type="button" name="button"></></button>
+            <?= Html::a('View', ['site/showvideo', 'id' => $video->video_id,], ['class' => 'btn btn-default']); ?>
           </div>
         </div>
         <br /><br /><br />

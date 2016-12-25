@@ -19,7 +19,7 @@ body {
     transition: 0.5s;
     padding: 0;
     margin-top: 51px;
-    border: 1px solid #000;
+    border-right: 1px solid #ddd;
 }
 
 .sidenav-btn {
@@ -56,6 +56,10 @@ body {
     margin-left: 16%;
 }
 
+.video-container-single {
+    margin-left: 27%;
+}
+
 #main {
     transition: margin-left .5s;
 }
@@ -70,6 +74,10 @@ body {
     }
 
     .video-container {
+        margin-left: 0;
+    }
+
+    .video-container-single {
         margin-left: 0;
     }
 }
@@ -100,8 +108,9 @@ body {
 }
 
 .jumbotron {
-    text-align: center;
-    background-color: transparent;
+    text-align: left;
+    background-color: #eee;
+    padding: 10px 10px !important;
 }
 
 .jumbotron .btn {

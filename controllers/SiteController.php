@@ -12,7 +12,7 @@ use app\models\Video;
 use app\models\VideoSearch;
 use app\models\Category;
 use app\models\CategorySearch;
-
+use app\models\Comments;
 
 class SiteController extends Controller
 {
@@ -146,6 +146,31 @@ class SiteController extends Controller
     $categoryResult = $categories::find()->all();
 
     return $this->render('index', ['videos' => $videoResult, 'categories' => $categoryResult,]);
+  }
+
+  public function actionShowvideo($id) {
+    $videos = new Video();
+    $categories = new Category();
+    $comments = new Comments();
+
+    $videoResult = $videos::find()->where(['video_id' => $id])->one();
+    $commentResult = $comments::find()->where(['comm_video_id' => $id])->all();
+    $categoryResult = $categories::find()->all();
+
+    if ($comments->load(Yii::$app->request->post())) {
+      $comments->comm_video_id = $id;
+      $comments->comm_user_id = Yii::$app->user->identity->username;
+      if ($comments->save()) {
+
+        $comments = new Comments();
+        $commentResult = $comments::find()->where(['comm_video_id' => $id])->all();
+
+        return $this->render('video', ['video' => $videoResult, 'modelComments' => $comments , 'comments' => $commentResult, 'categories' => $categoryResult,]);
+      }
+
+    }
+
+    return $this->render('video', ['video' => $videoResult, 'modelComments' => $comments , 'comments' => $commentResult, 'categories' => $categoryResult,]); 
   }
 
 }
