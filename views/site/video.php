@@ -46,10 +46,10 @@ $this->title = 'vTube.yii';
 
                 <?php $form = ActiveForm::begin(); ?>
 
-                <?= $form->field($modelComments, 'comm_text')->textarea(['rows' => 6]) ?>
+                <?= $form->field($modelComments, 'comm_text')->textarea(['rows' => 2]) ?>
 
                 <div class="form-group">
-                    <?= Html::submitButton($modelComments->isNewRecord ? 'Create' : 'Update', ['class' => $modelComments->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+                    <?= Html::submitButton($modelComments->isNewRecord ? 'Post' : 'Update', ['class' => $modelComments->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
                 </div>
 
                 <?php ActiveForm::end(); ?>

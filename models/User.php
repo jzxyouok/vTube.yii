@@ -10,6 +10,9 @@ use yii\web\IdentityInterface;
  * This is the model class for table "user".
  *
  * @property integer $id
+ * @property string $user_id
+ * @property string first_name 
+ * @property string last_name 
  * @property string $username
  * @property string $password
  * @property string $authkey
@@ -34,9 +37,11 @@ use yii\web\IdentityInterface;
     public function rules()
     {
         return [
-            [['username', 'password',], 'required'],
+            [['user_id', 'first_name', 'last_name', 'username', 'password',], 'required'],
             [['username'], 'email'],
-            [['password', 'authkey'], 'string'],
+            [['user_id', 'first_name', 'last_name', 'password', 'authkey'], 'string'],
+
+            ['username', 'unique', 'targetClass' => 'app\models\User', 'message' => 'This email address has already been taken.'],
         ];
     }
 
@@ -47,6 +52,9 @@ use yii\web\IdentityInterface;
     {
         return [
             'id' => 'ID',
+            'user_id' => 'User ID',
+            'first_name' => 'First Name',
+            'last_name' => 'Last Name',
             'username' => 'Username',
             'password' => 'Password',
             'authkey' => 'Authkey',
@@ -114,5 +122,12 @@ use yii\web\IdentityInterface;
     public function validatePassword($password)
     {
         return $this->password === $password;
+    }
+
+     public function signup()
+    {
+        if (!$this->validate()) {
+            return null;
+        }
     }
 }

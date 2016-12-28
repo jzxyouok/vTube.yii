@@ -66,15 +66,19 @@ class UserController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
 
+            $model->signup();
+     
             if ($model->findByUsername($model->username)) {
                 return $this->render('create', [
                     'model' => $model,
                 ]);
             }
 
+            $model->password = Yii::$app->security->generatePasswordHash($model->password);
+
             $model->authkey = Yii::$app->security->generateRandomString();
             if ($model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+                return $this->redirect(['site/login']);
             }
         } else {
             return $this->render('create', [

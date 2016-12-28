@@ -41,7 +41,7 @@ class Comments extends \yii\db\ActiveRecord
     {
         return [
             'comm_id' => 'Comm ID',
-            'comm_text' => 'Comm Text',
+            'comm_text' => 'Post Your Comment',
             'comm_video_id' => 'Comm Video ID',
             'comm_user_id' => 'Comm User ID',
         ];
